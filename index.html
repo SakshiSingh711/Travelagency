@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f5f5f5;
+            color: #5b4d4d;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #042930;
+            padding: 20px 0;
+            color: white;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            margin: 0 auto;
+        }
+        nav .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+        }
+        nav ul {
+            display: flex;
+        }
+        nav ul li {
+            list-style: none;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ffdd00;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: url('https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YmFja2dyb3VuZCUyMGZvciUyMHRyYXZlbGxpbmclMjB3ZWJzaXRlfGVufDB8fDB8fHww') no-repeat center center/cover;
+            color: rgb(255, 255, 255);
+            position: relative;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        .hero h1, .hero p, .hero a {
+            position: relative;
+            z-index: 1;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        .hero a {
+            text-decoration: none;
+            background-color: #ffdd00;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .hero a:hover {
+            background-color: #e3c600;
+        }
+
+        .section {
+            padding: 50px 20px;
+            width: 90%;
+            margin: 0 auto;
+        }
+        .about, .destinations, .services, .contact {
+            margin-bottom: 50px;
+        }
+        .about h2, .destinations h2, .services h2, .contact h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #005f73;
+        }
+        .about img {
+            max-width: 100%;
+            
+            
+            
+            margin: 20px ;
+            border-radius: 10px;
+            
+        }
+        .destinations .destination, .services .service {
+            margin-bottom: 20px;
+            background-color: #e9ecef;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .destinations img, .services img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact form input, .contact form textarea {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #b7b7b7;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .contact form button {
+            padding: 10px;
+            border: none;
+            background-color: #006073;
+            color: rgb(255, 255, 255);
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .contact form button:hover {
+            background-color: #003d4c;
+        }
+        .sakshi{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Travel Agency</div>
+            <img src="data:image/png;base64,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"width=120>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Explore the World with Us</h1>
+        <p>Your dream vacation is just a click away.</p>
+        <a href="#destinations">Discover Now</a>
+    </div>
+
+    <!-- About Section -->
+    <div class="section about" id="about">
+        
+        <h2>About Us</h2>
+        
+        <p>We are a passionate travel agency dedicated to crafting unforgettable trips to the most beautiful destinations across the globe. Our team ensures every experience is tailored to your desires.</p>
+        <div class="sakshi">
+        <img src="https://images.unsplash.com/photo-1732373870219-ac6444949471?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDl8RnpvM3p1T0hONnd8fGVufDB8fHx8fA%3D%3Dw"width="300px"alt="About Us">
+        <img src="https://images.unsplash.com/photo-1732951340728-d8b726561d50?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDh8RnpvM3p1T0hONnd8fGVufDB8fHx8fA%3D%3D" width="300px"alt="About Us">
+        <img src="https://images.unsplash.com/photo-1708344377669-a0e64a7095f9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fHw%3D"width="300px"alt="About Us">
+        
+    </div>
+    <p style="text-align: center;">Explore the City of Light, from the Eiffel Tower to the Louvre.</p>
+    </div>
+
+    <!-- Destinations Section -->
+    <div class="section destinations" id="destinations">
+        <h2>Popular Destinations</h2>
+        <div class="destination"> 
+            <h3>Paris, France</h3>
+            <img src="https://plus.unsplash.com/premium_photo-1717346482132-838fef0ebbd1?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHBhcmlzfGVufDB8fDB8fHww" width ="300"alt="paris">
+            <img src="https://images.unsplash.com/photo-1525218291292-e46d2a90f77c?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fHBhcmlzfGVufDB8fDB8fHww"width ="300"alt="paris">
+            <img src="https://images.unsplash.com/photo-1551634979-2b11f8c946fe?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHBhcmlzfGVufDB8fDB8fHww" width ="300px" alt="Paris">
+            <img src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D "width ="300px" alt="Paris">
+            
+
+            <p>Explore the City of Light, from the Eiffel Tower to the Louvre.</p>
+        </div>
+        <div class="destination">
+            <h3>Maldives</h3>
+            
+            <img src="https://images.unsplash.com/photo-1730483940882-14465f1f29d4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fG1hbGRpdmVzfGVufDB8fDB8fHww" width="300px">
+            <img src="https://plus.unsplash.com/premium_photo-1691675471055-2b0fb6d375f2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTN8fG1hbGRpdmVzfGVufDB8fDB8fHww" width="290px">
+            <img src="https://images.unsplash.com/photo-1616524629947-967525666467?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjR8fG1hbGRpdmVzfGVufDB8fDB8fHww"width="245px">
+            <p>Relax in paradise surrounded by crystal clear waters.</p>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="section services" id="services">
+        <h2>Our Services</h2>
+        <div class="service">
+            <h3>Flight Booking</h3>
+            <p>Seamless flight reservations with the best deals.</p>
+
+        </div>
+        <div class="service">
+            <h3>Hotel Reservations</h3>
+            <p>Comfortable stays tailored to your budget and preferences.</p>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="section contact" id="contact">
+        <!-- <h2>Contact Us</h2>
+        <form>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form> -->
+        <div class="section contact" id="contact">
+            <h2>Contact Us</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="button" onclick="showAlert()">Send Message</button>
+            </form>
+        </section>
+        
+        <script>
+            function showAlert() {
+                alert("Your message has been sent!");
+            }
+        </script>
+        
+        
+    </div>
+</body>
+</html>
